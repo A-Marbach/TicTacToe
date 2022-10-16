@@ -1,3 +1,99 @@
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.game-over{
+    position: absolute;
+    left: 400px;
+    right: 0;
+    z-index: 2;
+    animation: zoomIn 225ms ease-in-out;
+}
+
+@keyframes zoomIn{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.restart-btn{
+    position: absolute;
+    left: 150px;
+    right: 0;
+    top: 250px;
+    border: 1px solid rgba(0,0,0,0.5);
+    z-index: 2;
+    background-color: rgba(253,205,7,255);
+    font-size: 50px;
+    width: 300px;
+    height: 150px;
+    animation: zoomIn 225ms ease-in-out;
+    cursor: pointer;
+}
+
+.restart-btn:hover{
+    background-color: rgb(245 197 2 / 67%);
+}
+.horizontal-line{
+    height: 10px;
+    background-color: rgba(0,0,0,0.5);
+    width: 350px;
+    position: absolute;
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out ;
+    z-index: 1;
+}
+
+.make-vertical{
+    transform: rotate(90deg) scaleX(0.0);
+}
+
+.spin-45deg{
+    transform: rotate(45deg);
+}
+
+.spin-negative-45deg{
+    transform: rotate(135deg);
+
+}
+.player-inactive{
+    opacity: 0.5;
+}
+
+.player-panel{
+    display: flex;
+    font-size: 32px;
+    align-items: center;
+    margin-right: 12px;
+    margin-bottom: 32px;
+}
+
+.player-panel div{
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+
+}
+
+.player-panel img{
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}
+
+table{
+    position: relative;
+}
 tr{
     width: 399px;
 }
@@ -48,4 +144,22 @@ table td {
 
   .d-none{
     display: none;
+  }
+
+  @media(max-width: 480px){
+    
+.player-panel{
+    font-size: 25px;
+}
+
+td{
+    width: 100px;
+    height: 100px;
+}
+
+.shape{
+    width: 60px;
+    height: 60px;
+}
+
   }
